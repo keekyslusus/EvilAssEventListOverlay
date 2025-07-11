@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Russo One';
+    src: url('fonts/russo_one.ttf') format('truetype');
+}
+
+body {
+    background-color: transparent;
+    margin: 0;
+    overflow: hidden;
+}
+
+#event-list {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.event {
+    font-family: 'Russo One', sans-serif;
+    font-size: 24px;
+    margin-top: 1px;
+    padding: 7px 12px;
+    width: fit-content;
+    align-self: flex-end;
+    line-height: 1;
+    will-change: opacity, transform;
+}
+
+#event-list .event:last-child {
+
+}
+
+.event .username {
+    font-weight: 600;
+    color: white;
+    margin-right: 6px;
+}
+
+.event .details {
+    color: #d6d6d6;
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.new-event-animation {
+    animation: slideInFromBottom 0.4s cubic-bezier(.9,0,0,.98) forwards;
+}
+
+@keyframes slideOutToTop {
+    from {
+        opacity: 0.1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.disappearing-event {
+    animation: slideOutToTop 0.6s cubic-bezier(.9,0,0,.98) forwards;
+}
